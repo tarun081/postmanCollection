@@ -54,12 +54,12 @@ function saveJson(path, key, filename, json, callback) {
   let fullpath = path;
 
   if (USEID) {
-    fullpath = fullpath + '/' + key;
+    fullpath = fullpath;
   }
   
   if (USEDATE) {
     let date = dateformat(new Date(), "mm-dd-yyyy")
-    fullpath = fullpath + '/' + date;
+    fullpath = fullpath;
   }
 
   fs.ensureDirSync(fullpath)
@@ -80,7 +80,7 @@ async.each(APIKEYS, function getAllUids(key) {
       setTimeout(() => {
         getData(urlC, key, (colJson) => {
           let name = colJson.collection.info.name;
-          let filename = owner + '-' + name + ".json";
+          let filename = name + ".json";
 
           saveJson(PATHCOL, key, filename, colJson, () => {
             logger.info(`Collection: ${el.uid}: ${filename} - done`);
@@ -103,7 +103,7 @@ async.each(APIKEYS, function getAllUids(key) {
       setTimeout(() => {
         getData(urlE, key, (envJson) => {
           let name = envJson.environment.name;
-          let filename = owner + '-' + name + ".json";
+          let filename = name + ".json";
 
           saveJson(PATHENV, key, filename, envJson, () => {
             logger.info(`Enviroment: ${el.uid}: ${filename} - done`);
