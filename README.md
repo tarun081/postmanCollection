@@ -14,7 +14,7 @@
 To run this app, install it locally using npm:
 
 ```
-git clone https://github.com/kytmanov/postmanBackup.git
+git clone https://git@github.com:tarun081/postmanCollection.git
 cd postmanBackup
 npm install
 
