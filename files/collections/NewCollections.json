@@ -1,1 +1,0 @@
-{"collection":{"info":{"_postman_id":"c31317e8-447d-d00f-8563-072172711efd","name":"NewCollections","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},"item":[{"name":"TestCollection","_postman_id":"fd8012e9-ba4c-e891-91e3-6e6663f31c71","request":{"method":"GET","header":[],"body":{"mode":"formdata","formdata":[]},"url":{"raw":""}},"response":[]}]}}
