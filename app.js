@@ -1,6 +1,3 @@
-/**
- * Author: Alexander Kytmanov
- */
 
 const Client = require('node-rest-client').Client;
 const fs = require('fs-extra');
@@ -25,6 +22,7 @@ log4js.configure(config.debug);
 
 
 function getData(url, key, callback) {
+  console.log("url : ",url);
   let client = new Client();
   var args = {
     headers: {
