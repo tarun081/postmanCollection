@@ -1,6 +1,6 @@
 {
   "api_url": "https://api.getpostman.com/",
-  "api_keys": ["PMAK-5fd096b19ee285003bf38227-cf62603451c0da31d4b920e8c37858e704"],
+  "api_keys": ["APIKEYS"],
   "path": {
     "collections": "files/collections",
     "environments": "files/environments"

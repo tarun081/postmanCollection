@@ -10,8 +10,8 @@ const logger = log4js.getLogger('debug');
 const config = require('./config.json');
 
 const APIKEYS = config.api_keys; //Postman API key. (Allows multiple keys)
-const PATHCOL = config.path.collections; //Postman collections folder
-const PATHENV = config.path.environments; //Postman environments folder
+const PATHCOL = 'files/superCashCollections';
+const PATHENV = 'files/superCashEnv';
 const TIMEOUT = config.time_between_requests; //Delay between api requests(Postman limitaion - max 60 requests per minute).
 const USEDATE = config.use_date_subfolder;
 const USEID = config.use_id_subfolder;
@@ -23,6 +23,8 @@ log4js.configure(config.debug);
 
 function getData(url, key, callback) {
   console.log("url : ",url);
+if(key == 'APIKEYS')
+console.log("Please check X-API-KEY");
   let client = new Client();
   var args = {
     headers: {
@@ -30,7 +32,9 @@ function getData(url, key, callback) {
     }
   };
   client.get(url, args, function(data, response) {
+console.log("response.statusCode : ",response.statusCode);
     if (response.statusCode !== 200) {
+console.log("check your X-API-KEY as api is returning status code ",response.statusCode);
       logger.error(`${key} - ${response.statusCode} - ${response.statusMessage} - ${url}`)
     } else {
       if (callback) {
